@@ -1,0 +1,30 @@
+.featuredCampaigns {
+    min-height: 70vh;
+    padding-block: 4rem;
+    background-image: url(../public/Noise.png);
+}
+
+.slidingCards {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 8rem;
+}
+
+.leftArrow,
+.rightArrow {
+    border-radius: 50%;
+    background-color: var(--lemon);
+    width: 40px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+
+.cardsContainer {
+    width: 70vw;
+    padding: 1rem;
+    overflow: hidden;
+}

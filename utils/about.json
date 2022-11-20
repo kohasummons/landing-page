@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "image": "/safety-shield.png",
+        "heading": "Safety",
+        "desc": "To secure your protection and guard against fraud, our Trust & Safety team is on duty around-the-clock. Additionally, we guarantee donor protection. We have rightly earned the trust of respected institutions and government officials around the world."
+    },
+    {
+        "id": 2,
+        "image": "/helping-hands.png",
+        "heading": "Aid",
+        "desc": "Lemonraise has helped families and communities get back on their feet quickly. We have successfully delivered over $1 million directly to individuals and communities in need. This is in line with our vision to help raise funds for their various needs in Africa."
+    },
+    {
+        "id": 3,
+        "image": "/globe.png",
+        "heading": "Connect",
+        "desc": "Lemonraise makes it simple to spread your message via email, SMS, and social media to gain support for your cause. Furthermore, we have a dedicated staff that is seeking for outstanding stories to highlight and share with the media and our community."
+    }
+]

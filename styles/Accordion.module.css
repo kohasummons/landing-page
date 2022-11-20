@@ -1,0 +1,34 @@
+.accordionItem {
+  box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.25);
+  background-color: var(--white);
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.btn {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--lemon);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.accordionTitle {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.accordionContent {
+  padding: 2rem;
+  background: rgb(238, 238, 238);
+  transition: 1s ease-in-out;
+  border-radius: 0 0 10px 10px;
+  transition: 1s ease-in-out;
+}

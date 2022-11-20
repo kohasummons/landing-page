@@ -1,0 +1,67 @@
+.card {
+    border-radius: 10px;
+    background-color: var(--white);
+}
+
+.content {
+    padding: 1rem;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.date {
+    font-size: 15px;
+    color: rgba(153, 156, 169, 1);
+}
+
+.donations {
+    font-weight: 500;
+}
+
+.middle h3 {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.middle p {
+    color: rgba(123, 125, 140, 1);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.cta {
+    margin-block: 1vh;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.cta button {
+    border: 1px solid var(--black);
+    border-radius: 8px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .2s ease-in;
+}
+
+.cta button:hover {
+    border: 1px solid var(--lemon);
+    border-radius: 8px;
+    background-color: var(--lemon);
+}
+
+.bookmark {
+    padding: .7rem 1rem;
+}
+
+.btn {
+    padding: .8rem 3rem;
+    width: 100%;
+}

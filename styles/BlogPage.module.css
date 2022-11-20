@@ -1,0 +1,75 @@
+.header {
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main {
+  background-image: url(/Noise.png);
+  padding-block: 4rem;
+}
+
+.info {
+  display: flex;
+  gap: 30px;
+  margin-block: 2rem 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.article {
+  margin-block: 100px;
+}
+
+.article p {
+  line-height: 2;
+}
+
+.article p + p {
+  margin-top: 10vh;
+}
+
+.more {
+  margin-block: 10vh;
+}
+
+.more h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.newsarticles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.newsarticles .info {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  margin-top: 50px;
+}
+
+.newsarticles .info::before {
+  content: "";
+  border-bottom: 4px solid var(--lemon);
+  width: 250px;
+  position: absolute;
+  top: -20px;
+  border-radius: 2px;
+}
+
+.newsarticles .btn {
+  border-radius: 10px;
+  background-color: var(--lemon);
+  padding: 0.8rem 2rem;
+  border: 0;
+  cursor: pointer;
+}
+
+.newsfeed h3{
+  margin-block: 20px;
+}

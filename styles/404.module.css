@@ -1,0 +1,16 @@
+.header {
+    min-height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .main {
+    background-image: url(/Noise.png);
+    padding-block: 4rem;
+  }
+
+  .image {
+    margin: 10vh auto;
+    width: 70%;
+  }

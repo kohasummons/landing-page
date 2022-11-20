@@ -1,0 +1,28 @@
+.header {
+  min-height: 20vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  background-image: url(/Noise.png);
+  padding-block: 2rem 4rem;
+}
+
+.main h3 {
+  margin-block: 50px 20px;
+}
+
+.main a {
+  color: rgb(119, 165, 74);
+}
+
+.main ul {
+  list-style-type: disc;
+  padding-left: 30px;
+}
+
+.main p {
+  margin-block: 30px;
+}

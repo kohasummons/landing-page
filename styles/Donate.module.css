@@ -1,0 +1,195 @@
+.header {
+  min-height: 20vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  background-image: url(/Noise.png);
+  padding-block: 4rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 50px;
+  align-items: flex-start;
+  min-height: 150vh;
+}
+
+.donationForm {
+  border: 1px solid var(--black);
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  background-color: var(--white);
+  max-width: 800px;
+}
+
+.donationForm h3 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-block: 30px;
+}
+
+.donationForm hr {
+  border: 0;
+  border-bottom: 1.5px solid rgba(158, 161, 171, 1);
+  margin-bottom: 30px;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.currency {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--lemon);
+  border-radius: 8px;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.form input[type="text"] {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--black);
+  padding: 1rem 1.5rem;
+  background-color: transparent;
+  outline: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.form input[type="text"]::placeholder {
+    font-weight: 500;
+}
+
+.priceBtns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.priceBtns input[type="button"] {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid var(--black);
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.priceBtns input[type="button"]:hover,
+.priceBtns input[type="button"] :active {
+  background-color: var(--lemon);
+  font-weight: 700;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  margin-block: 30px;
+}
+
+.card {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.card:not(:nth-child(3)):hover {
+  transform: scale(0.95);
+}
+
+.confirm {
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 1.2em;
+  align-items: flex-start;
+  margin-block: 20px;
+}
+
+.confirm label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.confirm input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 30px;
+  height: 30px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  position: relative;
+  transform: translateY(0.2em);
+  display: grid;
+  place-content: center;
+}
+
+.confirm input[type="checkbox"]::before {
+  content: "";
+  width: 30px;
+  aspect-ratio: 1;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: var(--black);
+  position: absolute;
+  top: 6px;
+  left: 7px;
+  transform-origin: left;
+  clip-path: polygon(3% 20%, 0 25%, 20% 45%, 45% 8%, 40% 0%, 20% 30%);
+}
+.confirm input[type="checkbox"]:checked {
+  background-color: var(--lemon);
+  border: 0;
+}
+.confirm input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.donateBtn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 0;
+  background-color: var(--lemon);
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-block: 30px;
+}
+
+.attribution {
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-block: 20px;
+}
+
+.attribution > a {
+    border-bottom: 2px solid var(--fd-black);
+}
+
+.donationInfo h2 {
+    margin-block: 30px;
+    font-size: 2.5rem;
+}
+
+.donationInfo p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-top: 20px;
+}

@@ -1,0 +1,28 @@
+.FAQs {
+  min-height: 80vh;
+  padding-block: 4rem;
+  background-image: url(../public/Noise.png);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rem;
+  min-height: 70vh;
+}
+
+.questions {
+  height: 100%;
+  width: 50vw;
+}
+
+.questions h2 {
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.accordion {
+  max-width: 800px;
+  margin: 3rem auto 0;
+}

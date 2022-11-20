@@ -1,0 +1,104 @@
+.header {
+  min-height: 20vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  background-image: url(/Noise.png);
+  padding-block: 2rem;
+}
+
+.heading {
+  text-align: center;
+  font-size: 3.8rem;
+  font-weight: 400;
+}
+
+.heading span {
+  font-weight: 700;
+  border-bottom: 4px solid var(--lemon);
+}
+
+.cards {
+  display: flex;
+  width: 80%;
+  gap: 3rem;
+  margin: 10vh auto;
+}
+
+#info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  min-height: 30vh;
+  padding-block: 2rem;
+  margin-block: 10vh;
+}
+
+/* .image {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  width: 50vw;
+  left: -20vw;
+  background-color: var(--white);
+  padding: 10vh 30px;
+} */
+
+.details {
+  padding: 2rem;
+}
+
+.infoTitle {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  width: max-content;
+  border-bottom: 4px solid var(--lemon);
+}
+
+#info p {
+  font-size: 1.1rem;
+}
+
+#info p + p {
+  margin-top: 20px;
+}
+
+#developed {
+  min-height: 40vh;
+  padding-block: 2rem;
+  text-align: center;
+  margin-block: 10vh;
+}
+
+#developed h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+#developed h2 span {
+  border-bottom: 4px solid var(--lemon);
+}
+
+#developed p {
+  font-size: 1.1rem;
+  margin: 5vh auto;
+  width: 50%;
+}
+
+.individuals {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 10vw;
+  width: 50vw;
+  margin: 7vh auto;
+  text-align: start;
+}
+
+.individuals p {
+  margin: 0 !important;
+}
+

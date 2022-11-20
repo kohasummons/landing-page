@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Charity for Education",
+        "progress": 100,
+        "image": "charity.png",
+        "amountRaised": "100,848",
+        "target": "100,000",
+        "category": "Education"
+    },
+    {
+        "id": 2,
+        "title": "Health and Medication",
+        "progress": 90,
+        "image": "Health.png",
+        "amountRaised": "113,562",
+        "target": "115,000",
+        "category": "Health"
+    },
+    {
+        "id": 3,
+        "title": "Food and Toiletries",
+        "progress": 65,
+        "image": "food.png",
+        "amountRaised": "120,730",
+        "target": "200,000",
+        "category": "Food"
+    },
+    {
+        "id": 4,
+        "title": "School Kids",
+        "progress": 65,
+        "image": "school.png",
+        "amountRaised": "120,730",
+        "target": "200,000",
+        "category": "School"
+    }
+]

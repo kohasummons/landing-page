@@ -1,0 +1,76 @@
+{
+  "homepage": [
+    {
+      "id": 1,
+      "question": "What is Lemonraise?",
+      "answer": "Lemonraise is a fundraising platform where individuals, underserved communities amongst others can raise funds for their various needs in Africa and other continents."
+    },
+    {
+      "id": 2,
+      "question": "How much does Lemonraise cost?",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed congue sem. Nam sed quam sed nunc ullamcorper egestas. Phasellus pretium cursus gravida. Praesent ac nunc et enim pulvinar fermentum quis ac est. Maecenas semper mi felis, eu convallis nisl scelerisque at. Nam at tristique nunc. Phasellus magna dui, lacinia."
+    },
+    {
+      "id": 3,
+      "question": "Can I receive donations from international accounts?",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed congue sem. Nam sed quam sed nunc ullamcorper egestas. Phasellus pretium cursus gravida. Praesent ac nunc et enim pulvinar fermentum quis ac est. Maecenas semper mi felis, eu convallis nisl scelerisque at. Nam at tristique nunc. Phasellus magna dui, lacinia."
+    },
+    {
+      "id": 4,
+      "question": "What do I need to start a campaign?",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed congue sem. Nam sed quam sed nunc ullamcorper egestas. Phasellus pretium cursus gravida. Praesent ac nunc et enim pulvinar fermentum quis ac est. Maecenas semper mi felis, eu convallis nisl scelerisque at. Nam at tristique nunc. Phasellus magna dui, lacinia."
+    }
+  ],
+  "faqpage": [
+    {
+      "id": 1,
+      "question": "What is Lemonraise?",
+      "answer": "Lemonraise is a fundraising platform where individuals, underserved communities amongst others can raise funds for their various needs in Africa and other continents."
+    },
+    {
+      "id": 2,
+      "question": "How much does Lemonraise cost?",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed congue sem. Nam sed quam sed nunc ullamcorper egestas. Phasellus pretium cursus gravida. Praesent ac nunc et enim pulvinar fermentum quis ac est. Maecenas semper mi felis, eu convallis nisl scelerisque at. Nam at tristique nunc. Phasellus magna dui, lacinia."
+    },
+    {
+      "id": 3,
+      "question": "Can I receive donations from international accounts?",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed congue sem. Nam sed quam sed nunc ullamcorper egestas. Phasellus pretium cursus gravida. Praesent ac nunc et enim pulvinar fermentum quis ac est. Maecenas semper mi felis, eu convallis nisl scelerisque at. Nam at tristique nunc. Phasellus magna dui, lacinia."
+    },
+    {
+      "id": 4,
+      "question": "What do I need to start a campaign?",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed congue sem. Nam sed quam sed nunc ullamcorper egestas. Phasellus pretium cursus gravida. Praesent ac nunc et enim pulvinar fermentum quis ac est. Maecenas semper mi felis, eu convallis nisl scelerisque at. Nam at tristique nunc. Phasellus magna dui, lacinia."
+    },
+    {
+      "id": 5,
+      "question": "How do I withdraw funds from my campaign?",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed congue sem. Nam sed quam sed nunc ullamcorper egestas. Phasellus pretium cursus gravida. Praesent ac nunc et enim pulvinar fermentum quis ac est. Maecenas semper mi felis, eu convallis nisl scelerisque at. Nam at tristique nunc. Phasellus magna dui, lacinia."
+    },
+    {
+      "id": 6,
+      "question": "Can a friend withdraw the money I raise for them?",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed congue sem. Nam sed quam sed nunc ullamcorper egestas. Phasellus pretium cursus gravida. Praesent ac nunc et enim pulvinar fermentum quis ac est. Maecenas semper mi felis, eu convallis nisl scelerisque at. Nam at tristique nunc. Phasellus magna dui, lacinia."
+    },
+    {
+      "id": 7,
+      "question": "How is my donation protected?",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed congue sem. Nam sed quam sed nunc ullamcorper egestas. Phasellus pretium cursus gravida. Praesent ac nunc et enim pulvinar fermentum quis ac est. Maecenas semper mi felis, eu convallis nisl scelerisque at. Nam at tristique nunc. Phasellus magna dui, lacinia."
+    },
+    {
+      "id": 8,
+      "question": "How will I receive the donated funds?",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed congue sem. Nam sed quam sed nunc ullamcorper egestas. Phasellus pretium cursus gravida. Praesent ac nunc et enim pulvinar fermentum quis ac est. Maecenas semper mi felis, eu convallis nisl scelerisque at. Nam at tristique nunc. Phasellus magna dui, lacinia."
+    },
+    {
+      "id": 9,
+      "question": "What if I don't reach my goal?",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed congue sem. Nam sed quam sed nunc ullamcorper egestas. Phasellus pretium cursus gravida. Praesent ac nunc et enim pulvinar fermentum quis ac est. Maecenas semper mi felis, eu convallis nisl scelerisque at. Nam at tristique nunc. Phasellus magna dui, lacinia."
+    },
+    {
+      "id": 10,
+      "question": "Are there any deadlines or time limits?",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed congue sem. Nam sed quam sed nunc ullamcorper egestas. Phasellus pretium cursus gravida. Praesent ac nunc et enim pulvinar fermentum quis ac est. Maecenas semper mi felis, eu convallis nisl scelerisque at. Nam at tristique nunc. Phasellus magna dui, lacinia."
+    }
+  ]
+}

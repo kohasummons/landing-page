@@ -1,0 +1,113 @@
+.header {
+  min-height: 20vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  background-image: url(/Noise.png);
+  padding-block: 2rem;
+}
+
+.main h2 {
+  font-size: 2.2rem;
+  margin-block: 20px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+}
+
+.form {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+    margin-block: 10vh;
+}
+
+.form input,
+.form label,
+.form textarea {
+    width: 100%;
+    display: block;
+    margin-block: 10px;
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.inputgroup {
+    width: 100%;
+}
+
+.form input,
+.form textarea {
+    padding: 1rem;
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form input:focus,
+.form input:active,
+.form textarea:focus,
+.form textarea:active {
+    outline: 0;
+}
+
+.btn {
+    display: flex;
+    margin: 20px 0;
+}
+
+.btn button {
+    padding: 1rem 2.5rem;
+    cursor: pointer;
+    background-color: var(--lemon);
+    border: 0;
+    border-radius: 8px;
+    transition: .2s ease-in-out;
+}
+
+.btn button:hover {
+    background-color: rgb(147, 236, 4);
+}
+
+.address {
+    background-color: var(--white);
+    padding: 1rem;
+    margin-block: 10vh;
+    border-radius: 8px;
+}
+
+.address h2 {
+    font-size: 2.2rem;
+    margin-block: 20px;
+}
+
+.address > p {
+    font-size: 0.8rem;
+    color: rgba(102, 102, 102, 1);
+}
+
+.contact {
+    margin-block: 20px;
+}
+
+.contact p {
+    font-size: 0.9rem;
+    margin-block: 10px;
+}
+
+.contact p span {
+    font-weight: 700;
+}

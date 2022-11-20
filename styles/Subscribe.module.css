@@ -1,0 +1,45 @@
+.subscribe {
+    width: 50vw;
+    max-width: 1000px;
+    margin: 10px auto 50px;
+}
+
+.heading {
+    font-family: var(--ff-footer);
+    font-weight: 400;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.heading span {
+    font-weight: 700;
+}
+
+
+.input__group {
+    margin: 20px auto;
+    width: 100%;
+    display: flex;
+}
+
+.input__group input {
+    width: 100%;
+    padding: .8rem 1rem;
+    border-radius: 8px 0 0 8px;
+    border: 2px solid var(--black);
+    outline: 0;
+    background-color: transparent;
+}
+
+.input__group input::placeholder {
+    color: var(--black);
+}
+
+.input__group button {
+    padding: .8rem 3rem;
+    background-color: var(--black);
+    border: 1px;
+    color: var(--lemon);
+    letter-spacing: 1px;
+    border-radius: 0 8px 8px 0;
+}

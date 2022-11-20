@@ -1,0 +1,43 @@
+.howItWorks {
+    min-height: 40vh;
+    margin-top: 4rem;
+}
+
+.heading {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-block: 4rem;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    margin-block: 2rem;
+    padding-left: 2rem;
+    width: 90%;
+    position: relative;
+}
+
+.link {
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+.step + .step{
+    margin-top: 30px;
+}
+
+.step h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.step p {
+    max-width: 300px;
+    font-size: 0.9rem;
+}
+
+.image {
+    margin-left: auto;
+}

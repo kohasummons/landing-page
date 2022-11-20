@@ -1,0 +1,61 @@
+.card {
+    background-color: var(--white);
+    transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.details {
+    padding: 1rem;
+}
+
+.title {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.progressBar {
+    text-align: end;
+    margin-block: 15px;
+
+}
+
+.progressBar p {
+    font-size: 0.7rem;
+    margin-bottom: .7rem;
+}
+
+.targetMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    font-size: 0.75rem;
+    text-align: center;
+    color: rgb(79, 79, 79);
+    margin-block: 10px;
+}
+
+.targetMessage span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: black;
+}
+
+.category {
+    color: rgb(79, 79, 79);
+}
+
+.donate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 15px;
+    
+}
+
+.donate button {
+    padding: 0.7rem 3rem;
+    background-color: var(--lemon);
+    border: 0;
+    border-radius: 50px;
+}

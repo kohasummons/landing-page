@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "image": "/flooding.png",
+    "date": "Sept. 27, 2022",
+    "donations": 230,
+    "title": "Flood in Lekki",
+    "article": "Lekki community needs your help for crisis management from 3 days of non-stop flooding."
+  },
+  {
+    "id": 2,
+    "image": "/charity-2.png",
+    "date": "Sept. 27, 2022",
+    "donations": 1099,
+    "title": "Should You Focus on Charity?",
+    "article": "Emergency! A tsunami has just hit Malika, Tarasudi District. Help our affected brothers and sisters."
+  },
+  {
+    "id": 3,
+    "image": "/children.png",
+    "date": "Sept. 27, 2022",
+    "donations": 748,
+    "title": "Help African Children",
+    "article": "African children need your help to get proper food and water. Prolonged crisis is a real urgency."
+  }
+]

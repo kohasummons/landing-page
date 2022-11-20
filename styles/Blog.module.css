@@ -1,0 +1,12 @@
+.blogs {
+    min-height: 70vh;
+    padding-block: 4rem;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    width: 80%;
+    margin: 10vh auto;
+}

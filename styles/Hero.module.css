@@ -1,0 +1,49 @@
+.header {
+  background-image: url(../public/Noise.png);
+  padding-top: 4rem;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.heading {
+  width: 50vw;
+  max-width: 700px;
+  font-size: clamp(48px, 4rem, 96px);
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.colored {
+    color: var(--lemon);
+}
+
+.lower-header {
+    font-weight: 400;
+  }
+  
+  .paragraph {
+    font-size: 1.8rem;
+}
+
+.btn {
+    border: 0;
+    background-color: var(--lemon);
+    border-radius: 8px;
+    padding: 0.8rem 2rem;
+    font-family: var(--ff-heading);
+    font-size: 1.3rem;
+    font-weight: 500;
+    cursor: pointer;
+}

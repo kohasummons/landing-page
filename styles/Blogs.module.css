@@ -1,0 +1,116 @@
+.header {
+    min-height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .main {
+    background-image: url(/Noise.png);
+    padding-block: 4rem;
+  }
+  .heading {
+    border-radius: 16px;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 5rem;
+    display: flex;
+    gap: 5rem;
+    margin-bottom: 50px;
+  }
+
+  .headline {
+    width: 50vw;
+  }
+
+  .headline h2 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 30px
+  }
+
+  .headline p {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 500px;
+  }
+
+  .info {
+    display: flex;
+    gap: 30px;
+    margin-block: 2.5rem 1rem;
+    position: relative;
+  }
+
+  .info::before {
+    content: "";
+    border-bottom: 4px solid var(--lemon);
+    width:250px;
+    position: absolute;
+    top: -20px;
+    border-radius: 2px;
+  }
+
+  .btn {
+    border-radius: 10px;
+    background-color: var(--lemon);
+    padding: 0.8rem 2rem ;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .otherNews {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .newsfeed h3 {
+    font-size: 1.5rem;
+    margin-block: 10px;
+  }
+
+  .newsfeed p {
+    font-size: 0.8rem;
+  }
+
+  .image {
+    border-radius: 16px;
+  }
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+  }
+
+  .leftarrow,
+  .rightarrow {
+    width: 30px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .pages {
+    display: flex;
+    gap: 20px;
+  }
+
+  .pageNumber {
+    /* padding: .5rem .8rem; */
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 12px;
+    border: 2px solid var(--lemon);
+    cursor: pointer;
+  }
+
+  .pageNumber:nth-child(1) {
+    background-color: var(--lemon);
+  }
