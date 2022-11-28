@@ -1,15 +1,18 @@
 import Link from "next/link";
-import styles from "../styles/Terms.module.css"
+import Image from "next/image";
+import styles from "../styles/Terms.module.css";
 
 function Terms() {
   return (
     <>
-      <header className={styles.header}>
-        <div className="container">
+      <div className="container">
+        <header className={styles.header}>
           <h1>Terms and Conditions.</h1>
-          <div>{/* <Image src={} alt={} width={} height={} /> */}</div>
-        </div>
-      </header>
+          <div>
+            <Image src="/termsheader.png" alt="" width={150} height={150} />
+          </div>
+        </header>
+      </div>
       <main className={styles.main}>
         <div className="container">
           <h3>Welcome to Lemonraise!</h3>

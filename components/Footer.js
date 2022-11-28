@@ -49,7 +49,7 @@ function Footer() {
                 </Link>
               </div>
               <div className="social_icon">
-                <Link href="https://instagram.com/lemonraise" >
+                <Link href="https://instagram.com/lemonraise">
                   <a target="_blank">
                     <Image
                       src="/instagram.svg"
@@ -66,25 +66,49 @@ function Footer() {
             <div className="submenu">
               <h4>Links</h4>
               <ul>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/about">About Us</Link></li>
-                <li><Link href="/">Campaigns</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
+                <li>
+                  <Link href="/about">About Us</Link>
+                </li>
+                <li>
+                  <Link href="/personal-campaign">Personal Campaigns</Link>
+                </li>
+                <li>
+                  <Link href="/community-campaign">Community Campaigns</Link>
+                </li>
+                <li>
+                  <Link href="/contact">Contact</Link>
+                </li>
               </ul>
             </div>
             <div className="submenu">
               <h4>Get help</h4>
               <ul>
-                <li>Support</li>
-                <li>FAQs</li>
-                <li>Patnership</li>
+                <li>
+                  <Link href="/blog">Blog</Link>{" "}
+                </li>
+                <li>
+                  <Link href="/faq">FAQs</Link>{" "}
+                </li>
+                <li>
+                  <Link href="/partnership">Partnership</Link>{" "}
+                </li>
+                <li>
+                  <Link href="/pricing">Pricing</Link>{" "}
+                </li>
               </ul>
             </div>
             <div className="submenu">
               <h4>Resources</h4>
               <ul>
-                <li><Link href="/terms">Terms of Service</Link></li>
-                <li><Link href="/privacy">Privacy Policy</Link></li>
+                <li>
+                  <Link href="/terms">Terms of service</Link>
+                </li>
+                <li>
+                  <Link href="/privacy">Privacy policy</Link>
+                </li>
+                <li>
+                  <Link href="/campaigns">Start a campaign</Link>
+                </li>
               </ul>
             </div>
             <div className="submenu">
@@ -104,8 +128,9 @@ function Footer() {
         <hr />
         <div className="attribution">
           <small>
-            Copyright © 2022. Lemonraise | <Link href="/privacy">Privacy Policy</Link>{" "}
-            | <Link href="/terms">Terms of Use</Link>
+            Copyright © 2022. Lemonraise |{" "}
+            <Link href="/privacy">Privacy Policy</Link> |{" "}
+            <Link href="/terms">Terms of Use</Link>
           </small>
         </div>
       </div>

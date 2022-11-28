@@ -1,14 +1,17 @@
 import styles from "../styles/Terms.module.css";
+import Image from "next/image";
 
 function Terms() {
   return (
     <>
-      <header className={styles.header}>
-        <div className="container">
+      <div className="container">
+        <header className={styles.header}>
           <h1>Privacy Policy.</h1>
-          <div>{/* <Image src={} alt={} width={} height={} /> */}</div>
-        </div>
-      </header>
+          <div>
+            <Image src="/pricingheader.png" alt="" width={150} height={150} />
+          </div>
+        </header>
+      </div>
       <main className={styles.main}>
         <div className="container">
           <p>
@@ -25,24 +28,24 @@ function Terms() {
           <p>
             Lemonraise follows a standard procedure of using log files. These
             files log visitors when they visit websites. All hosting companies
-            do this and a part of hosting services&apos; analytics. The information
-            collected by log files include internet protocol (IP) addresses,
-            browser type, Internet Service Provider (ISP), date and time stamp,
-            referring/exit pages, and possibly the number of clicks. These are
-            not linked to any information that is personally identifiable. The
-            purpose of the information is for analyzing trends, administering
-            the site, tracking users&apos; movement on the website, and gathering
-            demographic information. Our Privacy Policy was created with the
-            help of the Privacy Policy Generator.
+            do this and a part of hosting services&apos; analytics. The
+            information collected by log files include internet protocol (IP)
+            addresses, browser type, Internet Service Provider (ISP), date and
+            time stamp, referring/exit pages, and possibly the number of clicks.
+            These are not linked to any information that is personally
+            identifiable. The purpose of the information is for analyzing
+            trends, administering the site, tracking users&apos; movement on the
+            website, and gathering demographic information. Our Privacy Policy
+            was created with the help of the Privacy Policy Generator.
           </p>
           <h3>Cookies and Web Beacons</h3>
           <p>
-            Like any other website, Lemonraise uses &apos;cookies&apos;. These cookies are
-            used to store information including visitors&apos; preferences, and the
-            pages on the website that the visitor accessed or visited. The
-            information is used to optimize the users&apos; experience by customizing
-            our web page content based on visitors&apos; browser type and/or other
-            information.
+            Like any other website, Lemonraise uses &apos;cookies&apos;. These
+            cookies are used to store information including visitors&apos;
+            preferences, and the pages on the website that the visitor accessed
+            or visited. The information is used to optimize the users&apos;
+            experience by customizing our web page content based on
+            visitors&apos; browser type and/or other information.
           </p>
           <h3>Privacy Policies</h3>
           <p>
@@ -53,9 +56,9 @@ function Terms() {
             Third-party ad servers or ad networks uses technologies like
             cookies, JavaScript, or Web Beacons that are used in their
             respective advertisements and links that appear on Lemonraise, which
-            are sent directly to users&apos; browser. They automatically receive your
-            IP address when this occurs. These technologies are used to measure
-            the effectiveness of their advertising campaigns and/or to
+            are sent directly to users&apos; browser. They automatically receive
+            your IP address when this occurs. These technologies are used to
+            measure the effectiveness of their advertising campaigns and/or to
             personalize the advertising content that you see on websites that
             you visit.
           </p>
@@ -65,8 +68,8 @@ function Terms() {
           </p>
           <h3>Third Party Privacy Policies</h3>
           <p>
-            Lemonraise&apos;s Privacy Policy does not apply to other advertisers or
-            websites. Thus, we are advising you to consult the respective
+            Lemonraise&apos;s Privacy Policy does not apply to other advertisers
+            or websites. Thus, we are advising you to consult the respective
             Privacy Policies of these third-party ad servers for more detailed
             information. It may include their practices and instructions about
             how to opt-out of certain options.

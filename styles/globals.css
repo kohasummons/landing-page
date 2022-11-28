@@ -2,10 +2,12 @@
 
 :root {
   --lemon: rgba(173, 248, 2, 1);
+  --yellow: rgba(255, 247, 0, 1);
   --white: rgba(255, 255, 255);
   --black: rgba(0, 0, 0, 1);
   --fd-black: rgba(28, 29, 35, 1);
   --md-black: rgba(18, 18, 18, 1);
+  --grey: rgba(158, 161, 171, 1);
   --bg-body: rgba(243, 242, 238, 1);
   --bg-navbar: rgba(255, 255, 255, 0.9);
 
@@ -98,7 +100,7 @@ nav {
 }
 
 nav > .container {
-  height: 70px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;

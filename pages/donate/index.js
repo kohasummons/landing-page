@@ -7,7 +7,6 @@ function Donate() {
   const [enteredAmount, setEnteredAmount] = useState("");
   const amountRef = useRef();
 
-
   const handleChange = () => {
     setEnteredAmount(amountRef.current.value);
   };
@@ -18,16 +17,18 @@ function Donate() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  }
+  };
 
   return (
     <>
-      <header className={styles.header}>
-        <div className="container">
+      <div className="container">
+        <header className={styles.header}>
           <h1>Donate.</h1>
-          <div>{/* <Image src={} alt={} width={} height={} /> */}</div>
-        </div>
-      </header>
+          <div>
+            <Image src="/donateheader.png" alt="" width={150} height={150} />
+          </div>
+        </header>
+      </div>
       <main className={styles.main}>
         <div className="container">
           <div className={styles.content}>

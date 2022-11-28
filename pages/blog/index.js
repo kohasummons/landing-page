@@ -5,12 +5,14 @@ import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 export default function Howitworks() {
   return (
     <>
-      <header className={styles.header}>
-        <div className="container">
+      <div className="container">
+        <header className={styles.header}>
           <h1>Blog</h1>
-          <div>{/* <Image src={} alt={} width={} height={} /> */}</div>
-        </div>
-      </header>
+          <div>
+            <Image src="/blogheader.png" alt="" width={150} height={150} />
+          </div>
+        </header>
+      </div>
       <main className={styles.main}>
         <div className="container">
           <section className={styles.heading}>

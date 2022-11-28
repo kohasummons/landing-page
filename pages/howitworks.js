@@ -5,12 +5,19 @@ import styles from "../styles/HowItWorksPage.module.css";
 export default function Howitworks() {
   return (
     <>
-      <header className={styles.header}>
-        <div className="container">
+      <div className="container">
+        <header className={styles.header}>
           <h1>How it Works</h1>
-          <div>{/* <Image src={} alt={} width={} height={} /> */}</div>
-        </div>
-      </header>
+          <div>
+            <Image
+              src="/howitworksheader.png"
+              alt=""
+              width={150}
+              height={150}
+            />
+          </div>
+        </header>
+      </div>
       <main className={styles.main}>
         <div className="container">
           <section className={styles.content}>

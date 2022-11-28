@@ -1,15 +1,16 @@
 import styles from "../styles/Contact.module.css";
-import GetStarted from "../components/GetStarted"
+import Image from "next/image";
+import GetStarted from "../components/GetStarted";
 
 function contact() {
   return (
     <>
-      <header className={styles.header}>
-        <div className="container">
+      <div className="container">
+        <header className={styles.header}>
           <h1>Contact Us</h1>
-          <div>{/* <Image src={} alt={} width={} height={} /> */}</div>
-        </div>
-      </header>
+          <Image src="/contactheader.png" alt="" width={150} height={150} />
+        </header>
+      </div>
       <main className={styles.main}>
         <div className="container">
           <h2>Send A Message</h2>

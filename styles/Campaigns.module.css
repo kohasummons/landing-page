@@ -1,0 +1,298 @@
+.header {
+  min-height: 25vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  background-image: url(/Noise.png);
+  padding-block: 4rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content h2 {
+  font-size: 2.3rem;
+  margin-bottom: 50px;
+}
+
+.box {
+  background-color: var(--white);
+  border-radius: 8px;
+  width: 70vw;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+.headingSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.arrowLeft {
+  position: absolute;
+  left: -100px;
+  top: 10px;
+}
+
+.arrowRight {
+  position: absolute;
+  right: -100px;
+  top: 10px;
+}
+
+.headingSection h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.headingSection small {
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+
+.selections {
+  width: 70%;
+  margin-top: 50px;
+}
+
+.selections h3 {
+  font-size: 1.3rem;
+}
+
+.selections h3 span {
+  font-size: 0.7rem;
+}
+
+.category {
+  display: flex;
+  margin-block: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.category button {
+  border: 1px solid var(--black);
+  background-color: transparent;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.btn {
+  background-color: var(--lemon);
+  border: none;
+  padding: 0.8rem 3.5rem;
+  border-radius: 8px;
+  margin-inline: auto;
+  display: block;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  margin-block: 50px;
+  width: 80%;
+  gap: 30px;
+}
+
+.option {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  border: 1px solid var(--black);
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 30px 0;
+}
+
+.chevron {
+  position: absolute;
+  right: 30px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.inputGroup + .inputGroup {
+  margin-top: 20px;
+}
+
+.form input {
+  display: block;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--black);
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+.currency {
+  position: absolute;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  right: 20px;
+  top: 9px;
+}
+
+.dates {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  gap: 50px;
+}
+
+.endDate {
+  margin-top: 0 !important;
+}
+
+.form input[type="date"] {
+  width: 100%;
+  font-family: var(--ff-footer);
+}
+
+.form input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: auto;
+}
+
+.form textarea {
+  min-width: 100%;
+  max-width: 100%;
+  border: 1px solid var(--black);
+  border-radius: 8px;
+  height: 200px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: var(--ff-footer);
+  outline: none;
+}
+
+.form textarea::placeholder {
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.form select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0.8em 1em;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+.form select::-ms-expand {
+  display: none;
+}
+
+.select {
+  width: 100%;
+  border: 1px solid var(--black);
+  border-radius: 8px;
+  padding: 0;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  position: relative;
+}
+
+ .select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--black);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  position: absolute;
+  right: 20px;
+  top: 17px;
+}
+
+.notice {
+  color: var(--grey);
+  margin-top: 10px;
+  text-align: center;
+}
+
+.success {
+  margin-top: 100px;
+}
+
+.share {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.share small {
+  font-weight: 500;
+  font-size: 1rem !important;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icons button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icons button:nth-child(7) {
+  font-size: 1.3rem;
+}

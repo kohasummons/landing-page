@@ -11,7 +11,7 @@ function Hero() {
           <span className={styles["lower-header"]}> Making a difference</span>
         </h1>
         <p className={styles.paragraph}>Launch your campaign in minutes.</p>
-        <Link href="/create-campaign"><a><button className={styles.btn}>Start a campaign</button></a></Link>
+        <Link href="/campaigns"><a><button className={styles.btn}>Start a campaign</button></a></Link>
         <Image src="/header-image.png" alt="lemonraise banner" width={1000} height={350} />
       </div>
     </header>

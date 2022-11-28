@@ -45,7 +45,7 @@ function Navbar() {
               <button className="login__btn">Log in</button>
             </a>
           </Link>
-          <Link href="/create-campaign">
+          <Link href="/campaigns">
             <a>
               <button className="campaign__btn">
                 <svg

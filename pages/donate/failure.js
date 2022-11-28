@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../../styles/Success.module.css"
+import styles from "../../styles/Failure.module.css";
 
 function Success() {
   return (
@@ -15,14 +15,14 @@ function Success() {
       <main className={styles.main}>
         <div className="container">
           <div className={styles.content}>
-            <h2>Thank You For Your Donation.</h2>
+            <h2>Sorry! An error occured during your transaction.</h2>
             <Image
-              src={"/helping-hand.png"}
-              alt="helping hand"
-              width={657}
-              height={518}
+              src={"/failurepage.png"}
+              alt="collection of toys"
+              width={650}
+              height={510}
             />
-            <button>Generate Receipt</button>
+            <button>Try Again</button>
           </div>
         </div>
       </main>

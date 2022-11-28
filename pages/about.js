@@ -1,5 +1,5 @@
 import Image from "next/image";
-import GetStarted from "../components/GetStarted"
+import GetStarted from "../components/GetStarted";
 import AboutCard from "../components/ui/AboutCard";
 const AboutData = require("../utils/about.json");
 import styles from "../styles/About.module.css";
@@ -7,12 +7,14 @@ import styles from "../styles/About.module.css";
 export default function About() {
   return (
     <>
-      <header className={styles.header}>
-        <div className="container">
+      <div className="container">
+        <header className={styles.header}>
           <h1>About Us</h1>
-          <div>{/* <Image src={} alt={} width={} height={} /> */}</div>
-        </div>
-      </header>
+          <div>
+            <Image src="/aboutheader.png" alt="" width={150} height={150} />
+          </div>
+        </header>
+      </div>
       <main className={styles.main}>
         <div className="container">
           <section>
@@ -33,7 +35,12 @@ export default function About() {
           </section>
           <section id={styles.info}>
             <div className={styles.image}>
-              <Image src="/hand-of-God.png" alt="hand stretched out" width={430} height={290} />
+              <Image
+                src="/hand-of-God.png"
+                alt="hand stretched out"
+                width={430}
+                height={290}
+              />
             </div>
             <div className={styles.details}>
               <h2 className={styles.infoTitle}>About Lemonraise</h2>
@@ -79,7 +86,7 @@ export default function About() {
               </p>
             </div>
           </section>
-                <GetStarted />
+          <GetStarted />
         </div>
       </main>
     </>

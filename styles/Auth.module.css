@@ -1,0 +1,212 @@
+.auth {
+  background-image: url(/Noise.png);
+  padding-block: 10rem;
+}
+
+.authForm {
+  border: 1px solid var(--black);
+  width: 35%;
+  border-radius: 8px;
+  margin-inline: auto;
+  background-color: var(--bg-body);
+  padding: 3rem 2rem;
+  position: relative;
+}
+
+.authForm h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.authForm p {
+  text-align: center;
+  color: var(--grey);
+}
+
+.authForm small {
+  font-size: 0.9rem;
+  color: var(--fd-black);
+  font-weight: 500;
+}
+
+.authForm small a {
+  border-bottom: 3px solid var(--lemon);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-block: 30px;
+}
+
+.phoneInputGroup {
+  border: 1px solid var(--black);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  padding: 0.5rem;
+}
+
+.inputGroup label,
+.phoneInputGroup label {
+  width: fit-content;
+  background-color: var(--bg-body);
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  padding-inline: 0.3rem;
+  font-size: 0.7rem;
+}
+
+.inputGroup label span {
+  color: var(--grey);
+}
+
+.inputGroup input {
+  border: 1px solid var(--black);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  background-color: inherit;
+  outline: none;
+  font-size: 1rem;
+}
+
+.phoneInputGroup input {
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 83%;
+  background-color: transparent;
+  outline: none;
+  font-size: 1rem;
+}
+
+.country select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0.5em 0.5em;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+.country select::-ms-expand {
+  display: none;
+}
+
+.country {
+  width: 10%;
+  border: 0;
+  padding: 0;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1.1;
+  position: relative;
+}
+
+.country::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--black);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  position: absolute;
+  right: 0px;
+  top: 12px;
+}
+
+.pipe {
+  border-right: 2px solid var(--black);
+  margin-inline: 8px;
+  height: 25px;
+  margin-top: 5px;
+}
+
+.forgot {
+  text-align: right;
+  width: fit-content;
+  font-size: 0.9rem;
+  border-bottom: 3px solid var(--lemon);
+  position: absolute;
+  right: 36px;
+}
+
+.cta {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cta p {
+  color: var(--grey);
+  font-size: 0.8rem;
+}
+
+.cta button,
+.google,
+.createBtn {
+  padding: 0.6rem;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.google {
+  background-color: var(--bg-body) !important;
+  color: var(--black) !important;
+  margin-block: 20px;
+  padding: 0.8rem !important;
+  box-shadow: 0px 3px 6px 0px rgba(0, 18, 38, 0.04);
+  box-shadow: 0px 10px 20px 12px rgba(0, 18, 38, 0.08);
+}
+
+.cta button span svg {
+  font-size: 1.3rem;
+  display: block;
+}
+
+.cta button:nth-child(1) {
+  background-color: var(--lemon);
+}
+
+.cta button:nth-child(3),
+.google {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.requirements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style-type: disc;
+  padding-inline: 20px;
+  font-size: 0.8rem;
+  font-family: var(--ff-heading);
+}
+
+.createBtn {
+  background-color: var(--lemon);
+  margin-block: 20px;
+}
+
+.loginCta {
+    display: block;
+    text-align: center;
+    font-weight: 400;
+}

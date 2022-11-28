@@ -1,16 +1,18 @@
 import Image from "next/image";
 import styles from "../styles/pricing.module.css";
-import GetStarted from "../components/GetStarted"
+import GetStarted from "../components/GetStarted";
 
 export default function Pricing() {
   return (
     <>
-      <header className={styles.header}>
-        <div className="container">
+      <div className="container">
+        <header className={styles.header}>
           <h1>Pricing</h1>
-          <div>{/* <Image src={} alt={} width={} height={} /> */}</div>
-        </div>
-      </header>
+          <div>
+            <Image src="/pricingheader.png" alt="" width={150} height={150} />
+          </div>
+        </header>
+      </div>
       <main className={styles.main}>
         <div className="container">
           <h2 className={styles.heading}>
@@ -117,13 +119,13 @@ export default function Pricing() {
             </div>
             <div className={styles.blue}>
               <p>
-                It&apos;s important to us that everyone is able to get the help they
-                need—which is why we don&apos;t charge a fee to start a campaign.
-                Instead, we accept optional contributions from donors that are
-                always appreciated, but never required. Donor contributions help
-                make it possible for us to offer powerful and trusted
-                fundraising tools, customer support, and a global team of Trust
-                & Safety experts.
+                It&apos;s important to us that everyone is able to get the help
+                they need—which is why we don&apos;t charge a fee to start a
+                campaign. Instead, we accept optional contributions from donors
+                that are always appreciated, but never required. Donor
+                contributions help make it possible for us to offer powerful and
+                trusted fundraising tools, customer support, and a global team
+                of Trust & Safety experts.
               </p>
             </div>
           </section>

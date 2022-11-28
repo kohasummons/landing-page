@@ -1,4 +1,5 @@
 import styles from "../styles/Partnerships.module.css";
+import Image from "next/image";
 import formStyles from "../styles/Contact.module.css";
 import GetStarted from "../components/GetStarted"
 
@@ -61,12 +62,19 @@ const svgIcon = (
 function Partnerships() {
   return (
     <>
-      <header className={styles.header}>
         <div className="container">
+      <header className={styles.header}>
           <h1>Partnerships.</h1>
-          <div>{/* <Image src={} alt={} width={} height={} /> */}</div>
-        </div>
+          <div>
+            <Image
+              src="/partnershipsheader.png"
+              alt=""
+              width={150}
+              height={150}
+            />
+          </div>
       </header>
+        </div>
       <div className={styles.headingSection}>
         <h2>
           <strong>Trusted</strong> by <br /> leading impact organizations

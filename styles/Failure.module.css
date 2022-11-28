@@ -1,0 +1,36 @@
+.header {
+  min-height: 25vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  background-image: url(/Noise.png);
+  padding-block: 4rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 100px;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.content h2 {
+  font-size: 3rem;
+}
+
+.content button {
+  width: 50%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 0;
+  background-color: var(--yellow);
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-block: 30px;
+}
