@@ -1,23 +1,30 @@
-import Image from "next/image";
-import { useState, useRef, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useState, useRef } from "react";
 import styles from "../styles/DragDrop.module.css";
 import UploadIcon from "./UploadIcon";
+import { saveMedia } from "../redux/campaign/campaignAction";
+import { campaignMedia } from "../utils/selectors/campaignSelectors";
+import { useShallowEqualSelector } from "../utils/hooks";
 
 export default function DragDrop() {
   const [dragActive, setDragActive] = useState(false);
-  const [uploadedFiles, setUploadedFiles] = useState([]);
-//   const [images, setImages] = useState([])
   const [fileLimit, setFileLimit] = useState(false);
   const fileUploadRef = useRef(null);
+
+  const uploadedFiles = useShallowEqualSelector(campaignMedia);
+  const dispatch = useDispatch();
 
   const max_count = 6;
 
   function handleFileAdd(files) {
     const uploaded = [...uploadedFiles];
+
     let exceededLimit;
+
     files.some((file) => {
       if (uploaded.findIndex((f) => f.name === file.name) === -1) {
-        uploaded.push(file);
+        const localImageUrl = window.URL.createObjectURL(file);
+        uploaded.push(localImageUrl);
         if (uploaded.length === max_count) setFileLimit(true);
         if (uploaded.length > max_count) {
           setFileLimit(false);
@@ -26,7 +33,7 @@ export default function DragDrop() {
         }
       }
     });
-    if (!exceededLimit) setUploadedFiles(uploaded);
+    if (!exceededLimit) dispatch(saveMedia(uploaded));
   }
 
   const handleDrag = function (e) {
@@ -40,6 +47,7 @@ export default function DragDrop() {
   };
 
   const handleSubmit = (e) => {
+    console.log("submitting");
     e.preventDefault();
   };
 
@@ -48,20 +56,20 @@ export default function DragDrop() {
     e.stopPropagation();
     setDragActive(false);
 
-    const fileList = e.dataTransfer.files,
-      chosenFiles = [...fileList];
+    const { files } = e.dataTransfer,
+      chosenFiles = [...files];
 
-    if (files && files[0]) {
+    if (chosenFiles && chosenFiles[0]) {
       handleFileAdd(chosenFiles);
     }
   };
 
   const handleChange = function (e) {
     e.preventDefault();
-    const fileList = e.target.files,
-      chosenFiles = [...fileList];
+    const { files } = e.target,
+      chosenFiles = [...files];
 
-    if (fileList && fileList[0]) {
+    if (chosenFiles && chosenFiles[0]) {
       handleFileAdd(chosenFiles);
     }
   };
@@ -70,40 +78,12 @@ export default function DragDrop() {
     fileUploadRef.current.click();
   };
 
-//   useEffect(()=>{
-//     const images = [], fileReaders = [];
-//     let isCancel = false;
-
-//     if (uploadedFiles.length) {
-//         uploadedFiles.forEach((file) => {
-//           const fileReader = new FileReader();
-//           fileReaders.push(fileReader);
-//           fileReader.onload = (e) => {
-//             const { result } = e.target;
-//             if (result) {
-//               images.push(result)
-//             }
-//             if (images.length === uploadedFiles.length && !isCancel) {
-//               setImages(images);
-//             }
-//           }
-//           fileReader.readAsDataURL(file);
-//         })
-//       };
-//       return () => {
-//         isCancel = true;
-//         fileReaders.forEach(fileReader => {
-//           if (fileReader.readyState === 1) {
-//             fileReader.abort()
-//           }
-//         })
-//       }
-//   },[uploadedFiles])
-
   return (
     <>
       <div>
-        <p className={styles.heading}>Photos/Videos ({uploadedFiles.length}/6)</p>
+        <p className={styles.heading}>
+          Photos/Videos ({uploadedFiles.length}/6)
+        </p>
       </div>
       <form
         className={styles.fileUpload}

@@ -17,6 +17,7 @@ function Donate() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
   };
 
   return (

@@ -1,5 +1,6 @@
 import Image from "next/image";
-import styles from "../styles/GetStarted.module.css"
+import Link from "next/link";
+import styles from "../styles/GetStarted.module.css";
 
 function GetStarted() {
   return (
@@ -8,8 +9,10 @@ function GetStarted() {
         <h3>Ready to get started?</h3>
         <h4>Join thousands of others today.</h4>
         <div className={styles.btns}>
-          <button className={styles.startBtn}>Start a campaign</button>
-          <button className={styles.normalBtn}>How it works</button>
+          <button className={styles.startBtn}>
+            <Link href="/campaigns">Start a campaign</Link>{" "}
+          </button>
+          <button className={styles.normalBtn}><Link href="/register">Join Lemonraise</Link></button>
         </div>
       </div>
       <Image

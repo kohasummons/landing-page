@@ -86,7 +86,7 @@
   gap: 15px;
 }
 
-.category button {
+.category input[type="button"] {
   border: 1px solid var(--black);
   background-color: transparent;
   padding: 0.5rem 0.8rem;
@@ -248,7 +248,7 @@
   position: relative;
 }
 
- .select::after {
+.select::after {
   content: "";
   width: 0.8em;
   height: 0.5em;

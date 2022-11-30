@@ -10,7 +10,7 @@ const UploadFile = () => {
         <header className={styles.header}>
           <h1>Campaign.</h1>
           <div>
-            <Image src="/campaignheader.png" alt="" width={150} height={150} />
+            <Image src="/campaignheader.png" alt="" width={150} height={150} /> 
           </div>
         </header>
       </div>

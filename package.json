@@ -9,11 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.0",
+    "antd": "^5.0.2",
+    "axios": "^1.2.0",
+    "dotenv": "^16.0.3",
     "next": "12.3.1",
+    "next-redux-wrapper": "^8.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
-    "swiper": "^8.4.4"
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.2",
+    "reselect": "^4.1.7",
+    "swiper": "^8.4.4",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "eslint": "8.26.0",

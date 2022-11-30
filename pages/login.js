@@ -1,27 +1,38 @@
-import { useState, useRef } from "react";
+import { useDispatch } from "react-redux";
 import Link from "next/link";
 import styles from "../styles/Auth.module.css";
 import { FaGoogle } from "react-icons/fa";
 import { CiLogin } from "react-icons/ci";
+import { loginUser } from "../redux/auth/authAction";
+import { notificationError, notificationSuccess } from "../utils/helpers";
+import { useForm } from "../utils/hooks";
+import { loginValidator } from "../utils/formValidation";
 
 const LoginPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const emailRef = useRef();
-  const passwordRef = useRef();
-
-  const emailHandler = () => {
-    setEmail(emailRef.current.value);
+  const initialValues = {
+    email: "",
+    password: "",
   };
 
-  const passwordHandler = () => {
-    setPassword(passwordRef.current.value);
+  const dispatch = useDispatch();
+
+  const callback = () => {
+    loginUser(dispatch, values).then((res) => {
+      if (res.status === "success") {
+        notificationSuccess(res.message);
+        router.push("/");
+      } else if (res.status === "error") {
+        notificationError(res.title);
+      }
+    });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  const { values, errors, handleChange, handleSubmit } = useForm(
+    callback,
+    initialValues,
+    loginValidator
+  ); 
+
   return (
     <main className={styles.auth}>
       <div className="container">
@@ -36,20 +47,22 @@ const LoginPage = () => {
           <div className={styles.inputGroup}>
             <label htmlFor="email">Email *</label>
             <input
+              name="email"
               type="text"
-              value={email}
-              onChange={emailHandler}
-              ref={emailRef}
+              value={values.email}
+              onChange={handleChange}
             />
+            <small className={styles.error}>{errors.email}</small>
           </div>
           <div className={styles.inputGroup}>
             <label htmlFor="password">Password *</label>
             <input
+            name="password"
               type="password"
-              value={password}
-              onChange={passwordHandler}
-              ref={passwordRef}
+              value={values.password}
+              onChange={handleChange}
             />
+            <small className={styles.error}>{errors.password}</small>
           </div>
           <p className={styles.forgot}>
             <Link href="/forgot-password">Forgot your password?</Link>

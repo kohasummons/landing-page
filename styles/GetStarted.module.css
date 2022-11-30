@@ -1,42 +1,42 @@
 .cta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 5rem;
-    border-radius: 8px;
-    background: linear-gradient(95deg, rgb(140, 199, 0) 30%, #e9f501);
-    margin-block: 10vh;
-  }
-  
-  .cta h3 {
-      font-size: 2.7rem;
-  }
-  
-  .cta h4 {
-      font-size: 2.3rem;
-  }
-  
-  .btns {
-      width: 70%;
-      margin: 20px auto;
-      display: flex;
-      justify-content: space-evenly;
-      gap: 10px;
-  }
-  
-  .startBtn,
-  .normalBtn {
-      padding: 0.8rem 2rem;
-      border-radius: 8px;
-      cursor: pointer;
-  }
-  
-  .startBtn {
-      background-color: var(--white);
-      border: 0;
-  }
-  
-  .normalBtn {
-      background-color: transparent;
-      border: 1px solid var(--black);
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5rem;
+  border-radius: 8px;
+  background: linear-gradient(95deg, rgb(140, 199, 0) 30%, #e9f501);
+  margin-block: 10vh;
+}
+
+.cta h3 {
+  font-size: 2.7rem;
+}
+
+.cta h4 {
+  font-size: 2.3rem;
+}
+
+.btns {
+  width: 70%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+}
+
+.startBtn,
+.normalBtn {
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.startBtn {
+  background-color: var(--white);
+  border: 0;
+}
+
+.normalBtn {
+  background-color: transparent;
+  border: 1px solid var(--black);
+}

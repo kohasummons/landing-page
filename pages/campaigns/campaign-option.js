@@ -100,10 +100,6 @@ const CampaignOption = () => {
                     </div>
                   </div>
                 </Link>
-
-                {/* <button className={styles.btn}>
-                  <Link href="/">Next</Link>
-                </button> */}
               </div>
             </div>
           </div>

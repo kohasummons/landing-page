@@ -1,48 +1,49 @@
-import { useState, useRef } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
 import styles from "../styles/Auth.module.css";
 import google from "../components/Google";
 import { CiLogin } from "react-icons/ci";
+import { registerUser } from "../redux/auth/authAction";
+import { useForm } from "../utils/hooks";
+import { registerValidator } from "../utils/formValidation";
+import { notificationError, notificationSuccess } from "../utils/helpers";
 
 const RegisterPage = () => {
-  const [fullname, setFullname] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [password, setPassword] = useState("");
-  const [country, setCountry] = useState("");
-
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const phoneNumberRef = useRef();
-  const passwordRef = useRef();
-  const countryRef = useRef();
-
-  const fullnameHandler = () => {
-    setFullname(nameRef.current.target);
-  };
-  const emailHandler = () => {
-    setEmail(emailRef.current.value);
-  };
-  const phoneNumberHandler = () => {
-    setPhoneNumber(phoneNumberRef.current.value);
-  };
-  const passwordHandler = () => {
-    setPassword(passwordRef.current.value);
-  };
-  const countryHandler = () => {
-    setCountry(countryRef.current.value);
+  const initialValues = {
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+    country: "",
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const callback = () => {
+    registerUser(dispatch, values).then((res) => {
+      if (res.status === "success") {
+        notificationSuccess(res.message);
+        router.push("/");
+      } else if (res.status === "error") {
+        notificationError(res.title);
+      }
+    });
   };
+
+  const { values, errors, handleChange, handleSubmit } = useForm(
+    callback,
+    initialValues,
+    registerValidator
+  );
 
   const placeholderText =
-    country === "nigeria"
+    values.country === "nigeria"
       ? "+234"
-      : country === "usa"
+      : values.country === "usa"
       ? "+1"
-      : country === "uk"
+      : values.country === "uk"
       ? "+44"
       : "+234";
 
@@ -56,33 +57,34 @@ const RegisterPage = () => {
           </button>
           <p>OR</p>
           <div className={styles.inputGroup}>
-            <label htmlFor="fullname">Fullname *</label>
+            <label htmlFor="name">Fullname *</label>
             <input
+              name="name"
               type="text"
-              value={fullname}
-              ref={nameRef}
-              onChange={fullnameHandler}
+              value={values.name}
+              onChange={handleChange}
             />
+            <small className={styles.error}>{errors.fullname}</small>
           </div>
           <div className={styles.inputGroup}>
             <label htmlFor="email">Email *</label>
             <input
+              name="email"
               type="text"
-              value={email}
-              ref={emailRef}
-              onChange={emailHandler}
+              value={values.email}
+              onChange={handleChange}
             />
+            <small className={styles.error}>{errors.email}</small>
           </div>
           <div className={styles.phoneInputGroup}>
-            <label htmlFor="phone-number">
+            <label htmlFor="phone">
               Phone number <span>(optional)</span> *
             </label>
             <div className={styles.country}>
               <select
                 name="country"
-                value={country}
-                onChange={countryHandler}
-                ref={countryRef}
+                value={values.country}
+                onChange={handleChange}
               >
                 <option value="nigeria">🇳🇬</option>
                 <option value="usa">🇺🇸</option>
@@ -91,22 +93,23 @@ const RegisterPage = () => {
             </div>
             <div className={styles.pipe}></div>
             <input
+              name="phone"
               type="text"
               className={styles.phone}
               placeholder={placeholderText}
-              value={phoneNumber}
-              ref={phoneNumberRef}
-              onChange={phoneNumberHandler}
+              value={values.phone}
+              onChange={handleChange}
             />
           </div>
           <div className={styles.inputGroup}>
             <label htmlFor="password">Password *</label>
             <input
+              name="password"
               type="password"
-              value={password}
-              ref={passwordRef}
-              onChange={passwordHandler}
+              value={values.password}
+              onChange={handleChange}
             />
+            <small className={styles.error}>{errors.password}</small>
           </div>
           <ul className={styles.requirements}>
             <li>One lowercase character</li>

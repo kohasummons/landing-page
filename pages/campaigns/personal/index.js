@@ -1,11 +1,39 @@
-import Link from "next/link";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useDispatch } from "react-redux";
 import styles from "../../../styles/Campaigns.module.css";
+import { saveAmount } from "../../../redux/campaign/campaignAction";
+import { campaignAmount } from "../../../utils/selectors/campaignSelectors";
+import { useShallowEqualSelector } from "../../../utils/hooks";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { notification } from "antd";
 
 const Personal = () => {
-  const [enteredAmount, setEnteredAmount] = useState("");
-  const amountRef = useRef();
+  const [target_amount, setTargetAmount] = useState(
+    useShallowEqualSelector(campaignAmount)
+  );
+
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const handleChange = (e) => {
+    setTargetAmount(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!target_amount || target_amount === null) {
+      notification.error({
+        message: "Target amount cannot be empty",
+        duration: 3,
+      });
+      return;
+    } else {
+      dispatch(saveAmount(target_amount));
+      router.push("personal/upload-files");
+    }
+  };
+
   return (
     <>
       <div className="container">
@@ -43,25 +71,20 @@ const Personal = () => {
               </div>
 
               <div className={styles.selections}>
-                <form className={styles.form}>
-                  <label htmlFor="target Amount">Target Amount</label>
+                <form className={styles.form} onSubmit={handleSubmit}>
+                  <label htmlFor="target_amount">Target Amount</label>
                   <div className={styles.inputGroup}>
-                  <input
-                    type="text"
-                    value={enteredAmount}
-                    name="target amount"
-                    ref={amountRef}
-                    onChange={() => setEnteredAmount(amountRef.current.value)}
-                    placeholder="Enter your target amount"
-                  />
-                  <span className={styles.currency}>
-                    NGN
-                  </span>
+                    <input
+                      type="text"
+                      name="target_amount"
+                      value={target_amount}
+                      onChange={handleChange}
+                      placeholder="Enter your target amount"
+                    />
+                    <span className={styles.currency}>NGN</span>
                   </div>
+                  <button className={styles.btn}>Next</button>
                 </form>
-                <button className={styles.btn}>
-                  <Link href="personal/upload-files">Next</Link>
-                </button>
               </div>
             </div>
           </div>
