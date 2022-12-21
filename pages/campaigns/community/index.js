@@ -1,15 +1,36 @@
-import Link from "next/link";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import styles from "../../../styles/Campaigns.module.css";
+import { useDispatch } from "react-redux";
+import { saveAmount } from "../../../redux/campaign/campaignAction";
+import { campaignAmount } from "../../../utils/selectors/campaignSelectors";
+import { useShallowEqualSelector } from "../../../utils/hooks";
+import { useRouter } from "next/router";
+import { notifier } from "../../../utils/helpers";
 
 const Community = () => {
-  const [enteredAmount, setEnteredAmount] = useState("");
-  const amountRef = useRef();
+  const [target_amount, setTargetAmount] = useState(
+    useShallowEqualSelector(campaignAmount)
+  );
 
-  const submitHandler = (e) => {
-    e.preventDefault();
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const handleChange = (e) => {
+    setTargetAmount(e.target.value);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!target_amount || target_amount === null) {
+      notifier("Target amount cannot be empty");
+      return;
+    } else {
+      dispatch(saveAmount(target_amount));
+      router.push("community/choose-charity");
+    }
+  };
+
   return (
     <>
       <div className="container">
@@ -47,22 +68,19 @@ const Community = () => {
               </div>
 
               <div className={styles.selections}>
-                <form className={styles.form} onSubmit={submitHandler}>
-                  <label htmlFor="target Amount">Target Amount</label>
+                <form className={styles.form} onSubmit={handleSubmit}>
+                  <label htmlFor="target_amount">Target Amount</label>
                   <div className={styles.inputGroup}>
                     <input
                       type="text"
-                      value={enteredAmount}
-                      name="target amount"
-                      ref={amountRef}
-                      onChange={() => setEnteredAmount(amountRef.current.value)}
+                      name="target_amount"
+                      value={target_amount}
+                      onChange={handleChange}
                       placeholder="Enter your target amount"
                     />
                     <span className={styles.currency}>NGN</span>
                   </div>
-                  <button className={styles.btn}>
-                    <Link href="community/choose-charity">Next</Link>
-                  </button>
+                  <button className={styles.btn}>Next</button>
                 </form>
               </div>
             </div>

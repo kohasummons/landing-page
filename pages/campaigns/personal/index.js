@@ -6,7 +6,7 @@ import { campaignAmount } from "../../../utils/selectors/campaignSelectors";
 import { useShallowEqualSelector } from "../../../utils/hooks";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { notification } from "antd";
+import { notifier } from "../../../utils/helpers";
 
 const Personal = () => {
   const [target_amount, setTargetAmount] = useState(
@@ -23,10 +23,7 @@ const Personal = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!target_amount || target_amount === null) {
-      notification.error({
-        message: "Target amount cannot be empty",
-        duration: 3,
-      });
+      notifier("Target amount cannot be empty")
       return;
     } else {
       dispatch(saveAmount(target_amount));

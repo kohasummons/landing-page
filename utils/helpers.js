@@ -18,5 +18,11 @@ const notificationSuccess = (description, duration) => {
   });
 };
 
+const notifier = (value) =>
+  notification.error({
+    message: value,
+    duration: 2,
+  });
 
-export { notificationError, notificationSuccess };
+
+export { notificationError, notificationSuccess, notifier };

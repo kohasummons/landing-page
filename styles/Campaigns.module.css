@@ -84,6 +84,7 @@
   margin-block: 20px;
   flex-wrap: wrap;
   gap: 15px;
+  justify-content: center;
 }
 
 .category input[type="button"] {
@@ -93,6 +94,12 @@
   cursor: pointer;
   border-radius: 8px;
 }
+
+.category input[type="button"].active {
+  background-color: var(--lemon);
+}
+
+
 
 .btn {
   background-color: var(--lemon);

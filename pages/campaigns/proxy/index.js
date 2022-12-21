@@ -1,35 +1,40 @@
-import { useState, useRef } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
 import styles from "../../../styles/Campaigns.module.css";
+import { useForm, useShallowEqualSelector } from "../../../utils/hooks";
+import {
+  campaignBeneficiary,
+  campaignBeneficiaryName,
+  campaignBeneficiaryEmail,
+  campaignBeneficiaryPhone,
+} from "../../../utils/selectors/campaignSelectors";
+import { saveBeneficiary } from "../../../redux/campaign/campaignAction";
+import { beneficiaryValidator } from "../../../utils/formValidation";
 
 const Beneficiary = () => {
-  const nameRef = useRef(),
-    emailRef = useRef(),
-    phoneRef = useRef();
+  const initialValues = {
+    name: useShallowEqualSelector(campaignBeneficiaryName),
+    email: useShallowEqualSelector(campaignBeneficiaryEmail),
+    phone: useShallowEqualSelector(campaignBeneficiaryPhone),
+  };
 
+  const dispatch = useDispatch();
   const router = useRouter();
 
-  const [name, setName] = useState(""),
-    [email, setEmail] = useState(""),
-    [phoneNumber, setPhoneNumber] = useState("");
+  let details = useShallowEqualSelector(campaignBeneficiary);
 
-  const nameHandler = () => {
-    setName(nameRef.current.value);
+  const callback = () => {
+    details = { ...values };
+    dispatch(saveBeneficiary(details));
+    router.push("proxy/target-amount");
   };
 
-  const emailHandler = () => {
-    setEmail(emailRef.current.value);
-  };
-
-  const phoneHandler = () => {
-    setPhoneNumber(phoneRef.current.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  const { values, error, handleChange, handleSubmit } = useForm(
+    callback,
+    initialValues,
+    beneficiaryValidator
+  );
 
   return (
     <>
@@ -73,20 +78,20 @@ const Beneficiary = () => {
                     <label htmlFor="name">Beneficiary&apos;s Name</label>
                     <input
                       type="text"
+                      name="name"
                       placeholder="Enter beneficiary name"
-                      ref={nameRef}
-                      value={name}
-                      onChange={nameHandler}
+                      value={values.name}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className={styles.inputGroup}>
                     <label htmlFor="email">Beneficiary&apos;s Email</label>
                     <input
                       type="text"
+                      name="email"
                       placeholder="Enter beneficiary email"
-                      ref={emailRef}
-                      value={email}
-                      onChange={emailHandler}
+                      value={values.email}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className={styles.inputGroup}>
@@ -95,15 +100,13 @@ const Beneficiary = () => {
                     </label>
                     <input
                       type="text"
+                      name="phone"
                       placeholder="Enter beneficiary phone number"
-                      ref={phoneRef}
-                      value={phoneNumber}
-                      onChange={phoneHandler}
+                      value={values.phone}
+                      onChange={handleChange}
                     />
                   </div>
-                  <button className={styles.btn}>
-                    <Link href="proxy/target-amount">Next</Link>
-                  </button>
+                  <button className={styles.btn}>Next</button>
                 </form>
               </div>
             </div>

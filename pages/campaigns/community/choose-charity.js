@@ -1,13 +1,24 @@
-import Link from "next/link";
 import Image from "next/image";
 import styles from "../../../styles/Campaigns.module.css";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { saveCharity } from "../../../redux/campaign/campaignAction";
+import { campaignCharity } from "../../../utils/selectors/campaignSelectors";
+import { useShallowEqualSelector } from "../../../utils/hooks";
+import { useRouter } from "next/router";
 
 const ChooseCharity = () => {
-  const [charity, setCharity] = useState();
+  const [charity, setCharity] = useState(
+    useShallowEqualSelector(campaignCharity)
+  );
+
+  const dispatch = useDispatch();
+  const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(saveCharity(charity));
+    router.push("about-campaign");
   };
 
   const handleChange = (e) => {
@@ -65,10 +76,8 @@ const ChooseCharity = () => {
                       <option value="charity3">Charity3</option>
                     </select>
                   </div>
+                  <button className={styles.btn}>Next</button>
                 </form>
-                <button className={styles.btn}>
-                  <Link href="about-campaign">Next</Link>
-                </button>
               </div>
             </div>
           </div>

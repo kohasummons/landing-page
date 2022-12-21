@@ -8,32 +8,30 @@ import { useShallowEqualSelector } from "../utils/hooks";
 
 export default function DragDrop() {
   const [dragActive, setDragActive] = useState(false);
-  const [fileLimit, setFileLimit] = useState(false);
+  const [fileList, setFileList] = useState(
+    useShallowEqualSelector(campaignMedia)
+  );
   const fileUploadRef = useRef(null);
 
-  const uploadedFiles = useShallowEqualSelector(campaignMedia);
+  const files = fileList ? [...fileList] : [];
+
   const dispatch = useDispatch();
 
   const max_count = 6;
 
-  function handleFileAdd(files) {
-    const uploaded = [...uploadedFiles];
+  function handleFileAdd() {
 
-    let exceededLimit;
+    // if (!exceededLimit) dispatch(saveMedia(uploaded));
 
-    files.some((file) => {
-      if (uploaded.findIndex((f) => f.name === file.name) === -1) {
-        const localImageUrl = window.URL.createObjectURL(file);
-        uploaded.push(localImageUrl);
-        if (uploaded.length === max_count) setFileLimit(true);
-        if (uploaded.length > max_count) {
-          setFileLimit(false);
-          exceededLimit = true;
-          return true;
-        }
-      }
+    if (!files) return;
+
+    const data = new FormData();
+
+    files.forEach((file, i) => {
+      data.append(`file-${i}`, file, file.name);
     });
-    if (!exceededLimit) dispatch(saveMedia(uploaded));
+
+    console.log(data);
   }
 
   const handleDrag = function (e) {
@@ -46,32 +44,32 @@ export default function DragDrop() {
     }
   };
 
-  const handleSubmit = (e) => {
-    console.log("submitting");
-    e.preventDefault();
-  };
-
   const handleDrop = function (e) {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
 
-    const { files } = e.dataTransfer,
-      chosenFiles = [...files];
+    const { files } = e.dataTransfer;
 
-    if (chosenFiles && chosenFiles[0]) {
-      handleFileAdd(chosenFiles);
-    }
+    const userFiles = [...files];
+
+    if (userFiles.length > max_count) return;
+
+    userFiles.forEach((file) =>
+      setFileList((prevFiles) => [...prevFiles, file])
+    );
   };
 
   const handleChange = function (e) {
     e.preventDefault();
-    const { files } = e.target,
-      chosenFiles = [...files];
+    const { files } = e.target;
+    const userFiles = [...files];
 
-    if (chosenFiles && chosenFiles[0]) {
-      handleFileAdd(chosenFiles);
-    }
+    if (userFiles.length > max_count) return;
+
+    userFiles.forEach((file) =>
+      setFileList((prevFiles) => [...prevFiles, file])
+    );
   };
 
   const buttonHandler = () => {
@@ -81,13 +79,11 @@ export default function DragDrop() {
   return (
     <>
       <div>
-        <p className={styles.heading}>
-          Photos/Videos ({uploadedFiles.length}/6)
-        </p>
+        <p className={styles.heading}>Photos/Videos ({files.length}/6)</p>
       </div>
       <form
         className={styles.fileUpload}
-        onSubmit={handleSubmit}
+        // onSubmit={handleSubmit}
         onDragEnter={handleDrag}
       >
         <input
@@ -108,7 +104,11 @@ export default function DragDrop() {
             <p>
               Drag & drop files here or{" "}
               <span>
-                <button className={styles.uploadBtn} onClick={buttonHandler}>
+                <button
+                  className={styles.uploadBtn}
+                  type="button"
+                  onClick={buttonHandler}
+                >
                   Browse
                 </button>
               </span>
@@ -126,15 +126,6 @@ export default function DragDrop() {
           ></div>
         )}
       </form>
-      {/* <div>
-        <ul className={styles.selectedFiles}>
-          {uploadedFiles.map((file, index) => (
-            <li key={index}>
-                {file.name}
-            </li>
-          ))}
-        </ul>
-      </div> */}
     </>
   );
 }

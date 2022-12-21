@@ -1,43 +1,42 @@
-import { useState, useRef } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
 import styles from "../../../styles/Campaigns.module.css";
+import { useFormNotAuth, useShallowEqualSelector } from "../../../utils/hooks";
+import {
+  campaignDetails,
+  campaignTitle,
+  campaignDescription,
+  campaignStart,
+  campaignEnd,
+} from "../../../utils/selectors/campaignSelectors";
+import { saveDetails } from "../../../redux/campaign/campaignAction";
 
 const AboutCampaign = () => {
-  const titleRef = useRef(),
-    contentRef = useRef(),
-    startRef = useRef(),
-    endRef = useRef();
+  const initialValues = {
+    title: useShallowEqualSelector(campaignTitle),
+    description: useShallowEqualSelector(campaignDescription),
+    start_date: useShallowEqualSelector(campaignStart),
+    end_date: useShallowEqualSelector(campaignEnd),
+  };
 
+  const dispatch = useDispatch();
   const router = useRouter();
 
-  const [title, setTitle] = useState(""),
-    [content, setContent] = useState(""),
-    [startDate, setStartDate] = useState(""),
-    [endDate, setEndDate] = useState("");
+  let details = useShallowEqualSelector(campaignDetails);
 
-  const titleHandler = () => {
-    setTitle(titleRef.current.value);
-  };
-
-  const contentHandler = () => {
-    setContent(contentRef.current.value);
-  };
-
-  const startDateHandler = () => {
-    setStartDate(startRef.current.value);
-  };
-
-  const endDateHandler = () => {
-    setEndDate(endRef.current.value);
+  const callback = () => {
+    details = { ...values };
+    dispatch(saveDetails(details));
+    router.push("success");
   };
 
   const today = new Date().toISOString().split("T")[0];
 
-  const handleSubmit = (e) => {
-    e.preventDefault;
-  };
+  const { values, handleChange, handleSubmit } = useFormNotAuth(
+    callback,
+    initialValues
+  );
 
   return (
     <>
@@ -74,55 +73,51 @@ const AboutCampaign = () => {
                   />
                 </div>
               </div>
-
               <div className={styles.selections}>
                 <form className={styles.form} onSubmit={handleSubmit}>
                   <div className={styles.inputGroup}>
                     <label htmlFor="title">Campaign Title</label>
                     <input
                       type="text"
+                      name="title"
                       placeholder="Enter a campaign title"
-                      ref={titleRef}
-                      value={title}
-                      onChange={titleHandler}
+                      value={values.title}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className={styles.inputGroup}>
-                    <label htmlFor="title">Tell your story</label>
+                    <label htmlFor="description">Tell your story</label>
                     <textarea
                       type="text"
-                      ref={contentRef}
+                      name="description"
                       placeholder={`Tips: \r\n Introduce yourself and your reason for raising funds \r\n Explain why it is important to you \r\n Explain how the funds would be used`}
-                      value={content}
-                      onChange={contentHandler}
+                      value={values.description}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className={styles.dates}>
                     <div className={styles.inputGroup}>
-                      <label htmlFor="start-date">Start Date</label>
+                      <label htmlFor="start_date">Start Date</label>
                       <input
                         type="date"
-                        name="start-date"
-                        ref={startRef}
-                        value={startDate}
+                        name="start_date"
+                        value={values.start_date}
                         min={today}
-                        onChange={startDateHandler}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className={`${styles.inputGroup} ${styles.endDate}`}>
                       <label htmlFor="end-date">End Date</label>
                       <input
                         type="date"
-                        name="end-date"
-                        ref={endRef}
-                        value={endDate}
-                        onChange={endDateHandler}
+                        name="end_date"
+                        value={values.end_date}
+                        min={today}
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
-                  <button className={styles.btn}>
-                    <Link href="success">Next</Link>
-                  </button>
+                  <button className={styles.btn}>Next</button>
                 </form>
               </div>
             </div>

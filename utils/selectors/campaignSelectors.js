@@ -5,6 +5,11 @@ const campaignCategory = createSelector(
   (campaign) => campaign.category
 );
 
+const campaignBeneficiary = createSelector(
+  (state) => state.campaign,
+  (campaign) => campaign.beneficiary
+);
+
 const campaignBeneficiaryName = createSelector(
   (state) => state.campaign,
   (campaign) => campaign.beneficiary.name
@@ -30,6 +35,11 @@ const campaignMedia = createSelector(
   (campaign) => campaign.media
 ); 
 
+const campaignDetails = createSelector(
+  (state) => state.campaign,
+  (campaign) => campaign.details
+)
+
 const campaignTitle = createSelector(
   (state) => state.campaign,
   (campaign) => campaign.details.title
@@ -42,12 +52,12 @@ const campaignDescription = createSelector(
 
 const campaignStart = createSelector(
   (state) => state.campaign,
-  (campaign) => campaign.details.startDate
+  (campaign) => campaign.details.start_date
 );
 
 const campaignEnd = createSelector(
   (state) => state.campaign,
-  (campaign) => campaign.details.endDate
+  (campaign) => campaign.details.end_date
 );
 
 const campaignCharity = createSelector(
@@ -59,10 +69,12 @@ export {
   campaignCategory,
   campaignAmount,
   campaignMedia,
+  campaignDetails,
   campaignTitle,
   campaignDescription,
   campaignStart,
   campaignEnd,
+  campaignBeneficiary,
   campaignBeneficiaryName,
   campaignBeneficiaryEmail,
   campaignBeneficiaryPhone,

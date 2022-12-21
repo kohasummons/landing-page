@@ -5,23 +5,56 @@ import { useDispatch } from "react-redux";
 import { saveCategory } from "../../redux/campaign/campaignAction";
 import { campaignCategory } from "../../utils/selectors/campaignSelectors";
 import { useShallowEqualSelector } from "../../utils/hooks";
+import { useCallback, useEffect, useState } from "react";
+
+const categoryButtons = {
+  medical: "medical",
+  animals: "animals",
+  education: "education",
+  business: "business",
+  memorial: "memorial",
+  competition: "competition",
+  creative: "creative",
+  volunteer: "volunteer",
+};
 
 const Campaigns = () => {
+  const [category, setCategory] = useState(
+    useShallowEqualSelector(campaignCategory)
+  );
+
   const dispatch = useDispatch();
   const router = useRouter();
-  
-  let category = useShallowEqualSelector(campaignCategory)
 
-  const handleClick = (e) => {
-    category = e.target.value
-  };
+  const changeBg = useCallback(() => {
+    if (!category) return;
+
+    const element = document.getElementById(category);
+
+    element.classList.add(styles.active);
+  }, [category]);
+
+  const resetBg = useCallback(() => {
+    const otherElArr = Object.values(categoryButtons).filter(
+      (id) => id !== category
+    );
+
+    otherElArr.forEach((elem) => {
+      const element = document.querySelector(`#${elem}`);
+      element.classList.remove(styles.active);
+    });
+  }, [category]);
+
+  useEffect(() => {
+    changeBg();
+    return resetBg();
+  }, [changeBg, resetBg]);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     dispatch(saveCategory(category));
-    router.push("campaigns/campaign-option")
-  }
-
+    router.push("campaigns/campaign-option");
+  };
 
   return (
     <>
@@ -64,53 +97,17 @@ const Campaigns = () => {
                   Category <span>(1 max.)</span>
                 </h3>
                 <div className={styles.category}>
-                  <input
-                    type={"button"}
-                    value="medical"
-                    onClick={handleClick}
-                  />
-                  <input
-                    type={"button"}
-                    value="animals"
-                    onClick={handleClick}
-                  />
-                  <input
-                    type={"button"}
-                    value="education"
-                    onClick={handleClick}
-                  />
-                  <input type={"button"} value="food" onClick={handleClick} />
-                  <input
-                    type={"button"}
-                    value="business"
-                    onClick={handleClick}
-                  />
-                  <input type={"button"} value="event" onClick={handleClick} />
-                  <input
-                    type={"button"}
-                    value="memorial"
-                    onClick={handleClick}
-                  />
-                  <input type={"button"} value="sports" onClick={handleClick} />
-                  <input type={"button"} value="travel" onClick={handleClick} />
-                  <input
-                    type={"button"}
-                    value="competition"
-                    onClick={handleClick}
-                  />
-                  <input
-                    type={"button"}
-                    value="creative"
-                    onClick={handleClick}
-                  />
-                  <input
-                    type={"button"}
-                    value="volunteer"
-                    onClick={handleClick}
-                  />
+                  {Object.entries(categoryButtons).map(([key, value]) => (
+                    <input
+                      type={"button"}
+                      key={key}
+                      id={key}
+                      value={value}
+                      onClick={() => setCategory(value)}
+                    />
+                  ))}
                 </div>
                 <button className={styles.btn} onClick={handleSubmit}>
-                  {/* <Link href="campaigns/campaign-option">Next</Link> */}
                   Next
                 </button>
               </div>

@@ -4,7 +4,9 @@ import "../styles/globals.css";
 import { wrapper } from "../redux/store";
 import "antd/dist/reset.css";
 
-const MyApp = ({ Component, pageProps }) => (
+const MyApp = ({ Component, pageProps }) => {
+  console.log({pageProps});
+  return(
   <Layout>
     <Head>
       <title>Lemonraise | Making a difference</title>
@@ -16,6 +18,6 @@ const MyApp = ({ Component, pageProps }) => (
     </Head>
     <Component {...pageProps} />
   </Layout>
-);
+)};
 
 export default wrapper.withRedux(MyApp);
